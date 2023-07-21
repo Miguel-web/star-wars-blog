@@ -11,18 +11,6 @@ useEffect(() => {
 	getPeople()
 },[])
 
-
-// function async getPeople () {
-// 	try {
-// 		const response = await fetch("https://www.swapi.tech/api/people/")
-// 		const body = await response.json()
-// 		console.log(body)
-// 	} catch (error) {
-// 		console.log(error);
-
-// 	}
-// }
-
 	return (
 	<div className="text-center mt-5">
 		
