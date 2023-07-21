@@ -1,8 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import "../../styles/home.css";
+import { context } from "../store/appContext";
 import { Card } from "../component/card.jsx";
 
-export const Home = () => {
+export const Home = (props) => {
+
+const { store, actions } = useContext(context);
+
+useEffect(() => {
+	getPeople()
+},[])
+
 
 // function async getPeople () {
 // 	try {
@@ -14,9 +22,6 @@ export const Home = () => {
 
 // 	}
 // }
-// useEffect(() => {
-// 	getPeople()
-// },[])
 
 	return (
 	<div className="text-center mt-5">
