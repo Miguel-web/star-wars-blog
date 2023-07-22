@@ -12,7 +12,14 @@ useEffect(() => {
 
 	return (
 	<div className="text-center mt-5">
-		<Card/>
+		{
+			store.people.map((people, index) => (
+				<Card
+				data={people}
+				key={index}
+				/>
+			))
+		}
 	</div>
 	);
 }
