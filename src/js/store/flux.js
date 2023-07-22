@@ -11,6 +11,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						throw new Error("Ha ocurrido un erro con la solicitud /people")
 					}
 					const body = await response.json()
+					setStore({ people: body.results });
 				} catch (error) {
 					console.log(error)
 				}
