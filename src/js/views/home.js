@@ -4,22 +4,18 @@ import { Context } from "../store/appContext";
 import { Card } from "../component/card.jsx";
 
 export const Home = (props) => {
+  const { store, actions } = useContext(Context);
+  useEffect(() => {
+    actions.getPeople();
+  }, []);
 
-const { store, actions } = useContext(Context);
-useEffect(() => {
-	actions.getPeople()
-},[])
-
-	return (
-	<div className="text-center mt-5">
-		{
-			store.people.map((people, index) => (
-				<Card
-				data={people}
-				key={index}
-				/>
-			))
-		}
-	</div>
-	);
-}
+  return (
+    <div className="Container ms-4 me-4">
+      <div className="row row-cols-1 row-cols-md-4 g-4">
+        {store.people.map((people, index) => (
+          <Card data={people} key={index} />
+        ))}
+      </div>
+    </div>
+  );
+};
