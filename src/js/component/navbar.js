@@ -12,7 +12,6 @@ export const Navbar = () => {
           className="card-img-top"
           alt="..."
         />
-        {/* <span className="navbar-brand mb-0 h1">React Boilerplate</span> */}
       </Link>
       <div className="ml-auto">
         <Link to="/demo">
