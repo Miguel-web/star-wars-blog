@@ -3,6 +3,8 @@ const getState = ({ getStore, getActions, setStore }) => {
     store: {
       people: [],
       planets: [],
+      singlePeople: {},
+      singlePlanets: {},
     },
     actions: {
       getPeople: async () => {
@@ -25,6 +27,34 @@ const getState = ({ getStore, getActions, setStore }) => {
           }
           const body = await response.json();
           setStore({ planets: body.results });
+        } catch (error) {
+          console.log(error);
+        }
+      },
+      getOnePeople: async (uid) => {
+        try {
+          const response = await fetch(
+            `https://www.swapi.tech/api/people/${uid}`
+          );
+          if (response.status != 200) {
+            throw new Error("Ha ocurrido un erro con la solicitud /people");
+          }
+          const body = await response.json();
+          setStore({ singlePeople: body });
+        } catch (error) {
+          console.log(error);
+        }
+      },
+      getOnePlanet: async (uid) => {
+        try {
+          const response = await fetch(
+            `https://www.swapi.tech/api/planets/${uid}`
+          );
+          if (response.status != 200) {
+            throw new Error("Ha ocurrido un erro con la solicitud /people");
+          }
+          const body = await response.json();
+          setStore({ singlePlanets: body });
         } catch (error) {
           console.log(error);
         }

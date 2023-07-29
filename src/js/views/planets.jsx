@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router";
+import { Context } from "../store/appContext";
 
 
-
-export const Planets = () => {
+export const Planet = () => {
     const params = useParams()
+    const { store, actions } = useContext(Context)
+    useEffect(() => {
+        actions.getOnePlanet
+    }, [])
     return (
         <div className={`vh-100 bg-dark text-light `}>
 
