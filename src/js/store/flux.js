@@ -4,7 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       people: [],
       planets: [],
       singlePeople: {},
-      singlePlanets: {},
+      singlePlanet: {},
     },
     actions: {
       getPeople: async () => {
@@ -54,7 +54,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             throw new Error("Ha ocurrido un erro con la solicitud /people");
           }
           const body = await response.json();
-          setStore({ singlePlanets: body });
+          setStore({ singlePlanet: body });
         } catch (error) {
           console.log(error);
         }
