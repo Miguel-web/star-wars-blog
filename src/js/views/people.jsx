@@ -7,7 +7,7 @@ export const People = () => {
     const params = useParams()
     const { store, actions } = useContext(Context)
     useEffect(() => {
-        actions.getOnePeople
+        actions.getOnePeople(params.peopleId)
     }, [])
     return (
         <div className={`vh-100 bg-dark text-light `}>

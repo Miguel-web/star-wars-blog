@@ -7,7 +7,7 @@ export const Planet = () => {
     const params = useParams()
     const { store, actions } = useContext(Context)
     useEffect(() => {
-        actions.getOnePlanet
+        actions.getOnePlanet(params.planetId)
     }, [])
     return (
         <div className={`vh-100 bg-dark text-light `}>
