@@ -2,9 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router";
 
 export const CardPeople = ({ data }) => {
-
   const navigate = useNavigate()
-
   return (
     <div className="col">
       <div className="card h-100">
@@ -21,6 +19,7 @@ export const CardPeople = ({ data }) => {
   );
 };
 export const CardPlanets = ({ data }) => {
+  const navigate = useNavigate()
   return (
     <div className="col">
       <div className="card h-100">

@@ -11,7 +11,7 @@ export const People = () => {
     }, [])
     return (
         <div className="row aligne-items-center justify-content-center vh-100 ">
-            <div className="card mb-3" style={{ maxWidth: "800px" }}>
+            <div className="card mb-3" style={{ maxWidth: "540px" }}>
                 <div className="row g-0">
                     <div className="col-md-4">
                         <img src="..." className="img-fluid rounded-start" alt="..." />
