@@ -13,7 +13,7 @@ export const CardPeople = ({ data }) => {
           <h5 className="card-title">{data.name}</h5>
           <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
           <button className={`btn btn-dark text-light`} onClick={() => {
-            navigate("/profile/" + data.uid)
+            navigate("/people/" + data.uid)
           }}>GO!</button>
         </div>
       </div>
@@ -29,6 +29,7 @@ export const CardPlanets = ({ data }) => {
           <h5 className="card-title">{data.name}</h5>
           <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
           <button className={`btn btn-dark text-light`} onClick={() => {
+            navigate("/planets/" + data.uid)
           }}>GO!</button>
         </div>
       </div>
