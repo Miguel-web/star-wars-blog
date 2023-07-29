@@ -12,12 +12,13 @@ export const Home = (props) => {
   }, []);
 
   return (
-    <div className="Container ms-4 me-4">
+    <div className="Container ps-4 pe-4 bg-dark">
       <div className="row row-cols-1 row-cols-md-4 g-4">
         {store.people.map((people, index) => (
           <CardPeople data={people} key={index} />
         ))}
       </div>
+      <br />
       <div className="row row-cols-1 row-cols-md-4 g-4">
         {store.planets.map((planets, index) => (
           <CardPlanets data={planets} key={index} />
