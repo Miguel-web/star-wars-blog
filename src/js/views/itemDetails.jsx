@@ -19,12 +19,12 @@ export const ItemDetails = (data, type) => {
                             ? tatooine
                             : `https://starwars-visualguide.com/assets/img/${type == "people"
                                 ? "characters"
-                                : type}/${data.uid}.jpg`} className="card-img-top" alt="..." />
+                                : type}/${data.uid}.jpg`} alt="..." />
                     </div>
                     <div className="col-md-8">
                         <div className="card-body">
                             <h5 className="card-title">{store.singleItem.properties && store.singleItem.properties.name}</h5>
-                            <p className="card-text"></p>
+                            <p className="card-text">{store.singleItem.description}</p>
                             <p className="card-text"><small className="text-body-secondary">Last updated 3 mins ago</small></p>
                         </div>
                     </div>
