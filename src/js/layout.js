@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
-import { People } from "./views/people.jsx";
+import { ItemDetails } from "./views/itemDetails.jsx";
 import { Planet } from "./views/planets.jsx";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
@@ -25,7 +25,7 @@ const Layout = () => {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/people/:peopleId" element={<People />} />
+            <Route path="/:type/:id" element={<ItemDetails />} />
             <Route path="/planet/:planetId" element={<Planet />} />
             <Route path="/demo" element={<Demo />} />
             <Route path="/single/:theid" element={<Single />} />

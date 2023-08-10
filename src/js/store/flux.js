@@ -3,8 +3,8 @@ const getState = ({ getStore, getActions, setStore }) => {
     store: {
       people: [],
       planets: [],
-      singlePeople: {},
-      singlePlanet: {},
+      singleItem: {},
+      favorites: [],
     },
     actions: {
       getPeople: async () => {
@@ -31,33 +31,33 @@ const getState = ({ getStore, getActions, setStore }) => {
           console.log(error);
         }
       },
-      getOnePeople: async (uid) => {
+      getItemDetails: async (type, uid) => {
         try {
           const response = await fetch(
-            `https://www.swapi.tech/api/people/${uid}`
+            `https://www.swapi.tech/api/${type}/${uid}`
           );
           if (response.status != 200) {
-            throw new Error("Ha ocurrido un erro con la solicitud /people");
+            throw new Error(`Ha ocurrido un error con la solicitud /${type}`);
           }
           const body = await response.json();
-          setStore({ singlePeople: body });
+          setStore({ singleItem: body.result });
         } catch (error) {
           console.log(error);
         }
       },
-      getOnePlanet: async (uid) => {
-        try {
-          const response = await fetch(
-            `https://www.swapi.tech/api/planets/${uid}`
-          );
-          if (response.status != 200) {
-            throw new Error("Ha ocurrido un erro con la solicitud /people");
-          }
-          const body = await response.json();
-          setStore({ singlePlanet: body });
-        } catch (error) {
-          console.log(error);
-        }
+      addFavorite: (name, url) => {
+        // let store = getStore()
+        const favs = [
+          ...getStore().favorites,
+          { favoriteName: name, favoriteUrl: url },
+        ];
+        setStore({ favorites: favs });
+      },
+      removeFavorite: (name) => {
+        const favs = getStore().favorites.filter(
+          (favorite) => favorite.favoriteName !== name
+        );
+        setStore({ favorites: favs });
       },
     },
   };
