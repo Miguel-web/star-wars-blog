@@ -4,7 +4,7 @@ import { Context } from "../store/appContext";
 import tatooine from "../../img/tatooine.jpg";
 
 
-export const ItemDetails = () => {
+export const ItemDetails = (data, type) => {
     const params = useParams()
     const { store, actions } = useContext(Context)
     useEffect(() => {
@@ -24,7 +24,7 @@ export const ItemDetails = () => {
                     <div className="col-md-8">
                         <div className="card-body">
                             <h5 className="card-title">{store.singleItem.properties && store.singleItem.properties.name}</h5>
-                            <p className="card-text">{store.singleItem.properties && store.singleItem.properties.name}</p>
+                            <p className="card-text"></p>
                             <p className="card-text"><small className="text-body-secondary">Last updated 3 mins ago</small></p>
                         </div>
                     </div>

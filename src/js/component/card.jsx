@@ -16,7 +16,6 @@ export const Card = ({ data, type }) => {
             : type}/${data.uid}.jpg`} className="card-img-top" alt="..." />
         <div className="card-body">
           <h5 className="card-title">{data.name}</h5>
-          <p className="card-text">{store.singleItem.properties && store.singleItem.properties.name}</p>
           <button className={`btn btn-dark text-light`} onClick={() => {
             navigate(`/${type}/${data.uid}`)
           }}>GO!</button>
