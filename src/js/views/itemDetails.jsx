@@ -11,14 +11,14 @@ export const ItemDetails = (data, type) => {
         actions.getItemDetails(params.type, params.id)
     }, [])
     return (
-        <div className="row aligne-items-center justify-content-center vh-100 ">
-            <div className="card mb-3" style={{ maxWidth: "540px" }}>
+        <div className="row aligne-items-center justify-content-center vh-100 bg-dark">
+            <div className="card mb-3 bg-dark" style={{ maxWidth: "540px" }}>
                 <div className="row g-0">
                     <div className="col-md-4">
-                        <img src={ } alt="..." />
+                        {/* <img src={ } alt="..." /> */}
                     </div>
-                    <div className="col-md-8">
-                        <div className="card-body">
+                    <div className="col-md-8 bg-dark">
+                        <div className="card-body bg-dark text-light">
                             <h5 className="card-title">{store.singleItem.properties && store.singleItem.properties.name}</h5>
                             <p className="card-text">{store.singleItem.description}</p>
                         </div>
