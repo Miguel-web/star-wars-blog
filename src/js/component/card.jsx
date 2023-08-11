@@ -8,18 +8,18 @@ export const Card = ({ data, type }) => {
   const navigate = useNavigate()
   return (
     <div>
-      <div className="card h-100" style={{ minWidth: "300px" }}>
+      <div className="card h-100 bg-dark" style={{ minWidth: "300px" }}>
         <img src={type == "planets" && data.uid == 1
           ? tatooine
           : `https://starwars-visualguide.com/assets/img/${type == "people"
             ? "characters"
             : type}/${data.uid}.jpg`} className="card-img-top" alt="..." />
         <div className="card-body">
-          <h5 className="card-title">{data.name}</h5>
-          <button className={`btn btn-dark text-light`} onClick={() => {
+          <h5 className="card-title text-light">{data.name}</h5>
+          <button className={`btn btn-primary text-light`} onClick={() => {
             navigate(`/${type}/${data.uid}`)
           }}>GO!</button>
-          <button className={`btn btn-dark text-light`} onClick={() => {
+          <button className={`btn btn-primary text-light ms-3`} onClick={() => {
             store.favorites.find((favorite) => favorite.favoriteName === data.name)
               ? actions.removeFavorite(data.name)
               : actions.addFavorite(data.name, `/people/${data.uid}`)
