@@ -21,18 +21,34 @@ export const ItemDetails = (data, type) => {
                                 ? "characters"
                                 : params.type}/${params.id}.jpg`} alt="..." />
                     </div>
-                    <div className="col-md-8 bg-dark">
-                        <div className="card-body bg-dark text-light">
-                            <h6>NAME</h6>
-                            <h5 className="card-title text-muted">{store.singleItem.properties && store.singleItem.properties.name}</h5>
-                            <h6>GENDER</h6>
-                            <h5 className="card-text text-muted">{store.singleItem.properties && store.singleItem.properties.gender}</h5>
-                            <h6>Birth Year</h6>
-                            <h5 className="card-text text-muted">{store.singleItem.properties && store.singleItem.properties.birth_year}</h5>
-                            <h6>Eye Color</h6>
-                            <h5 className="card-text text-muted">{store.singleItem.properties && store.singleItem.properties.eye_color}</h5>
+                    {params.type == "people" ? (
+
+                        <div className="col-md-8 bg-dark">
+                            <div className="card-body bg-dark text-light">
+                                <h6>NAME</h6>
+                                <h5 className="card-title text-muted">{store.singleItem.properties && store.singleItem.properties.name}</h5>
+                                <h6>GENDER</h6>
+                                <h5 className="card-text text-muted">{store.singleItem.properties && store.singleItem.properties.gender}</h5>
+                                <h6>Birth Year</h6>
+                                <h5 className="card-text text-muted">{store.singleItem.properties && store.singleItem.properties.birth_year}</h5>
+                                <h6>Eye Color</h6>
+                                <h5 className="card-text text-muted">{store.singleItem.properties && store.singleItem.properties.eye_color}</h5>
+                            </div>
+                        </div>)
+                        : params.type == "planets" &&
+                        <div className="col-md-8 bg-dark">
+                            <div className="card-body bg-dark text-light">
+                                <h6>NAME</h6>
+                                <h5 className="card-title text-muted">{store.singleItem.properties && store.singleItem.properties.name}</h5>
+                                <h6>Climate</h6>
+                                <h5 className="card-text text-muted">{store.singleItem.properties && store.singleItem.properties.climate}</h5>
+                                <h6>Gravity</h6>
+                                <h5 className="card-text text-muted">{store.singleItem.properties && store.singleItem.properties.gravity}</h5>
+                                <h6>Terrain</h6>
+                                <h5 className="card-text text-muted">{store.singleItem.properties && store.singleItem.properties.terrain}</h5>
+                            </div>
                         </div>
-                    </div>
+                    }
                 </div>
             </div>
         </div>
